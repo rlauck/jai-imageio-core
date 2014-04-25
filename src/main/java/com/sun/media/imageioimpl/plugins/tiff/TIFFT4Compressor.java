@@ -249,14 +249,14 @@ public class TIFFT4Compressor extends TIFFFaxCompressor {
 
         // This initial buffer size is based on an alternating 1-0
         // pattern generating the most bits when converted to code
-        // words: 9 bits out for each pair of bits in. So the number
-        // of bit pairs is determined, multiplied by 9, converted to
+        // words: 12 bits out for each pair of bits in. So the number
+        // of bit pairs is determined, multiplied by 12, converted to
         // bytes, and a ceil() is taken to account for fill bits at the
         // end of each line.  The "2" addend accounts for the case
         // of the pattern beginning with black.  The buffer is intended
         // to hold only a single row.
 
-        int maxBits = 9*((width + 1)/2) + 2;
+        int maxBits = 12*((width + 1)/2) + 2;
         int bufSize = (maxBits + 7)/8;
 
         // Calculate the maximum row as the G3-1D size plus the EOL,
